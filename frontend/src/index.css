@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  /* Panel surfaces — deep graphite, not pure black, like a control cabinet interior */
+  --color-panel-950: #0B0D10;
+  --color-panel-900: #12151A;
+  --color-panel-800: #1A1F26;
+  --color-panel-700: #262D36;
+  --color-panel-600: #3A424D;
+
+  /* Signal amber — indicator-light accent */
+  --color-signal-400: #F5BC5D;
+  --color-signal-500: #F2A93B;
+  --color-signal-600: #D98F1F;
+
+  /* Circuit teal — secondary interactive / "energized" state */
+  --color-circuit-400: #5EEAD4;
+  --color-circuit-500: #2DD4BF;
+  --color-circuit-600: #14B8A6;
+
+  /* Text on dark panels */
+  --color-ink-50: #F5F6F7;
+  --color-ink-200: #C7CCD1;
+  --color-ink-400: #8A929C;
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --radius-panel: 0.25rem;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-panel-950 text-ink-50 font-body antialiased;
+  }
+  ::selection {
+    @apply bg-signal-500/30 text-ink-50;
+  }
+
+  /* Light mode: same token names, inverted panel scale, so components
+     using bg-panel and text-ink utilities automatically adapt without prop changes. */
+  html.light {
+    color-scheme: light;
+    --color-panel-950: #F7F7F5;
+    --color-panel-900: #FFFFFF;
+    --color-panel-800: #EEEFEC;
+    --color-panel-700: #DBDCD8;
+    --color-panel-600: #B8BAB4;
+    --color-ink-50: #14161A;
+    --color-ink-200: #3C4147;
+    --color-ink-400: #6B7178;
+  }
+}
+
+@layer components {
+  /* Datum-mark card: corner tick marks like a technical drawing, not a soft glass blob */
+  .panel-card {
+    @apply relative bg-panel-900 border border-panel-700 rounded-[var(--radius-panel)] p-6;
+  }
+  .panel-card::before,
+  .panel-card::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--color-signal-500);
+  }
+  .panel-card::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+  }
+  .panel-card::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-signal-500 text-panel-950 font-semibold px-5 py-2.5 rounded-[var(--radius-panel)] hover:bg-signal-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal-400;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-panel-600 text-ink-50 font-medium px-5 py-2.5 rounded-[var(--radius-panel)] hover:border-circuit-500 hover:text-circuit-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-circuit-400;
+  }
+
+  .hairline {
+    @apply border-panel-700;
+  }
+
+  /* Prose styling for rendered lesson markdown — no typography plugin,
+     styled by hand to match the panel/signal/circuit token system. */
+  .lesson-content {
+    @apply text-ink-200 leading-relaxed;
+  }
+  .lesson-content h2 {
+    @apply mt-10 mb-3 font-display text-xl font-bold text-ink-50;
+  }
+  .lesson-content h3 {
+    @apply mt-8 mb-2 font-display text-lg font-semibold text-ink-50;
+  }
+  .lesson-content p {
+    @apply mb-4;
+  }
+  .lesson-content ul {
+    @apply mb-4 ml-5 list-disc space-y-1.5;
+  }
+  .lesson-content ol {
+    @apply mb-4 ml-5 list-decimal space-y-1.5;
+  }
+  .lesson-content strong {
+    @apply font-semibold text-ink-50;
+  }
+  .lesson-content code {
+    @apply rounded bg-panel-800 px-1.5 py-0.5 font-mono text-[0.85em] text-circuit-400;
+  }
+  .lesson-content pre {
+    @apply mb-5 overflow-x-auto rounded-[var(--radius-panel)] border border-panel-700 bg-panel-900 p-4;
+  }
+  .lesson-content pre code {
+    @apply bg-transparent p-0 text-ink-200;
+  }
+  .lesson-content table {
+    @apply mb-5 w-full border-collapse text-sm;
+  }
+  .lesson-content th {
+    @apply border border-panel-700 bg-panel-800 px-3 py-2 text-left font-display text-ink-50;
+  }
+  .lesson-content td {
+    @apply border border-panel-700 px-3 py-2;
+  }
+  .lesson-content a {
+    @apply text-signal-500 hover:text-signal-400 underline underline-offset-2;
+  }
+}
