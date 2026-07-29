@@ -1,0 +1,1 @@
+import{N as e}from"./index-CzAekOTu.js";var t=async()=>{let{data:t}=await e.get(`/wiring-diagrams`);return t.diagrams},n=async t=>{let{data:n}=await e.get(`/wiring-diagrams/${t}`);return n.diagram};export{t as n,n as t};

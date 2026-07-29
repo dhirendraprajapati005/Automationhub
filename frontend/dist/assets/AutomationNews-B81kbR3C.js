@@ -1,0 +1,1 @@
+import{M as e}from"./index-CzAekOTu.js";import{t}from"./PostListPage-DO22jmlb.js";var n=e(),r=()=>(0,n.jsx)(t,{type:`news`,basePath:`/news`,title:`Automation News`,description:`Platform updates, industry news, and standards updates.`});export{r as AutomationNews};

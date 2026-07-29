@@ -1,0 +1,1 @@
+import{M as e}from"./index-CzAekOTu.js";import{t}from"./PostListPage-DO22jmlb.js";var n=e(),r=()=>(0,n.jsx)(t,{type:`blog`,basePath:`/blog`,title:`The AutomationHub Blog`,description:`Long-form articles on automation practice, engineering reasoning, and career growth.`});export{r as Blog};

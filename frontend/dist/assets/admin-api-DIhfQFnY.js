@@ -1,0 +1,1 @@
+import{N as e}from"./index-CzAekOTu.js";var t=async()=>{let{data:t}=await e.get(`/admin/stats`);return t},n=async(t=1)=>{let{data:n}=await e.get(`/admin/users`,{params:{page:t}});return n},r=async(t,n)=>{let{data:r}=await e.patch(`/admin/users/${t}/role`,{role:n});return r.user};export{n,r,t};
