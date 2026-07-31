@@ -1,1 +1,0 @@
-import{N as e}from"./index-CzAekOTu.js";var t=async t=>{let{data:n}=await e.get(`/faults`,{params:t?{category:t}:{}});return n.faults},n=async t=>{let{data:n}=await e.get(`/faults/${t}`);return n.fault};export{t as n,n as t};

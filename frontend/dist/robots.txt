@@ -1,6 +1,0 @@
-# Update the domain below to match your actual production deployment,
-# and keep it in sync with SITE_URL in the backend .env.
-User-agent: *
-Allow: /
-
-Sitemap: https://automationhub.dev/sitemap.xml
