@@ -30,9 +30,37 @@ const app = express();
 // images are served from this API's origin but rendered on the frontend's
 // own origin/port — the default "same-origin" policy would silently block them.
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
+
+// Allowed origins: CLIENT_URL from .env (comma-separated if you ever need
+// more than one, e.g. a custom domain alongside the Vercel URL), PLUS the
+// common local dev ports — always allowed regardless of what CLIENT_URL is
+// set to, so local development never breaks just because production is
+// configured. Trailing slashes are stripped before comparing, since a
+// browser's Origin header never has one but it's an easy typo in env vars.
+const stripTrailingSlash = (url) => url.trim().replace(/\/$/, "");
+
+const configuredOrigins = (process.env.CLIENT_URL || "")
+  .split(",")
+  .map(stripTrailingSlash)
+  .filter(Boolean);
+
+const devOrigins = ["http://localhost:5173", "http://localhost:3000"];
+
+const allowedOrigins = [...new Set([...configuredOrigins, ...devOrigins])];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: (origin, callback) => {
+      // No Origin header at all (e.g. curl, server-to-server, Postman) — allow.
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(stripTrailingSlash(origin))) {
+        return callback(null, true);
+      }
+
+      console.warn(`CORS blocked request from origin: ${origin}`);
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true, // allow the httpOnly refresh cookie to be sent
   })
 );
