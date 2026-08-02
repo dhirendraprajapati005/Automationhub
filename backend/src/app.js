@@ -44,7 +44,7 @@ const configuredOrigins = (process.env.CLIENT_URL || "")
   .map(stripTrailingSlash)
   .filter(Boolean);
 
-const devOrigins = ["http://localhost:5173", "http://localhost:3000"];
+const devOrigins = ["http://localhost:5173"];
 
 const allowedOrigins = [...new Set([...configuredOrigins, ...devOrigins])];
 
