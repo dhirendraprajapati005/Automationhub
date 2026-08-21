@@ -160,7 +160,12 @@ const logout = asyncHandler(async (req, res) => {
   if (token) {
     await User.updateOne({ refreshToken: token }, { $unset: { refreshToken: 1 } });
   }
-  res.clearCookie("refreshToken");
+  const isProduction = process.env.NODE_ENV === "production";
+  res.clearCookie("refreshToken", {
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: isProduction ? "none" : "lax",
+  });
   res.json({ message: "Logged out" });
 });
 
