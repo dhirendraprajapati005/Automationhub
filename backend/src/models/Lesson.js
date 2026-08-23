@@ -43,6 +43,10 @@ const lessonSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    viewCount: {
+      type: Number,
+      default: 0,
+    },
     tags: [{ type: String, trim: true }],
     // Denormalized on the author account for a byline; not a strict foreign key requirement
     author: {

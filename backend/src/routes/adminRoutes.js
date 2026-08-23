@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getStats, listUsers, updateUserRole } from "../controllers/adminController.js";
+import { getStats, listUsers, updateUserRole, getAnalytics } from "../controllers/adminController.js";
 import { protect, restrictTo } from "../middleware/auth.js";
 
 const router = Router();
@@ -9,6 +9,7 @@ const router = Router();
 router.use(protect, restrictTo("admin"));
 
 router.get("/stats", getStats);
+router.get("/analytics", getAnalytics);
 router.get("/users", listUsers);
 router.patch("/users/:id/role", updateUserRole);
 

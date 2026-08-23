@@ -16,7 +16,11 @@ const getMachines = asyncHandler(async (req, res) => {
 const getMachine = asyncHandler(async (req, res) => {
   const { slug } = req.params;
 
-  const machine = await Machine.findOne({ slug, isPublished: true });
+  const machine = await Machine.findOneAndUpdate(
+    { slug, isPublished: true },
+    { $inc: { viewCount: 1 } },
+    { new: true }
+  );
   if (!machine) {
     return res.status(404).json({ message: "Machine not found" });
   }

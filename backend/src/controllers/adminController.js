@@ -2,6 +2,8 @@ import User from "../models/User.js";
 import Lesson from "../models/Lesson.js";
 import Machine from "../models/Machine.js";
 import Download from "../models/Download.js";
+import Thread from "../models/Thread.js";
+import Comment from "../models/Comment.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
 
 // @route  GET /api/admin/stats
@@ -69,4 +71,48 @@ const updateUserRole = asyncHandler(async (req, res) => {
   res.json({ user });
 });
 
-export { getStats, listUsers, updateUserRole };
+// @route  GET /api/admin/analytics
+// @desc   Real content-performance and growth analytics, built entirely from
+//         existing collections (view counts, signups, engagement) — no
+//         separate tracking pipeline, no fabricated numbers.
+const getAnalytics = asyncHandler(async (req, res) => {
+  const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+
+  const [
+    signupsByDay,
+    topLessons,
+    topMachines,
+    topDownloads,
+    threadCount,
+    commentCount,
+    topThreads,
+    totalLessonViews,
+    totalMachineViews,
+  ] = await Promise.all([
+    User.aggregate([
+      { $match: { createdAt: { $gte: thirtyDaysAgo } } },
+      { $group: { _id: { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } }, count: { $sum: 1 } } },
+      { $sort: { _id: 1 } },
+    ]),
+    Lesson.find({ isPublished: true }).select("title track viewCount").sort({ viewCount: -1 }).limit(5),
+    Machine.find({ isPublished: true }).select("title category viewCount").sort({ viewCount: -1 }).limit(5),
+    Download.find({ isPublished: true }).select("title downloadCount").sort({ downloadCount: -1 }).limit(5),
+    Thread.countDocuments(),
+    Comment.countDocuments(),
+    Thread.find().select("title type viewCount commentCount").sort({ viewCount: -1 }).limit(5),
+    Lesson.aggregate([{ $group: { _id: null, total: { $sum: "$viewCount" } } }]),
+    Machine.aggregate([{ $group: { _id: null, total: { $sum: "$viewCount" } } }]),
+  ]);
+
+  res.json({
+    signupsByDay: signupsByDay.map((d) => ({ date: d._id, signups: d.count })),
+    topLessons,
+    topMachines,
+    topDownloads,
+    topThreads,
+    community: { threadCount, commentCount },
+    totalContentViews: (totalLessonViews[0]?.total || 0) + (totalMachineViews[0]?.total || 0),
+  });
+});
+
+export { getStats, listUsers, updateUserRole, getAnalytics };

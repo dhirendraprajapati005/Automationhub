@@ -62,9 +62,12 @@ const AdminLayout = lazy(() => import("@/layouts/AdminLayout").then((m) => ({ de
 const AdminDashboard = lazy(() => import("@/pages/admin/AdminDashboard").then((m) => ({ default: m.AdminDashboard })));
 const AdminUsers = lazy(() => import("@/pages/admin/AdminUsers").then((m) => ({ default: m.AdminUsers })));
 const AdminDownloads = lazy(() => import("@/pages/admin/AdminDownloads").then((m) => ({ default: m.AdminDownloads })));
+const AdminCourses = lazy(() => import("@/pages/admin/AdminCourses").then((m) => ({ default: m.AdminCourses })));
+const AdminAnalytics = lazy(() => import("@/pages/admin/AdminAnalytics").then((m) => ({ default: m.AdminAnalytics })));
+const AdminSEO = lazy(() => import("@/pages/admin/AdminSEO").then((m) => ({ default: m.AdminSEO })));
+const AdminAds = lazy(() => import("@/pages/admin/AdminAds").then((m) => ({ default: m.AdminAds })));
 const AdminPosts = lazy(() => import("@/pages/admin/AdminPosts").then((m) => ({ default: m.AdminPosts })));
 const AdminCommunity = lazy(() => import("@/pages/admin/AdminCommunity").then((m) => ({ default: m.AdminCommunity })));
-const AdminStub = lazy(() => import("@/pages/admin/AdminStub").then((m) => ({ default: m.AdminStub })));
 
 const RouteFallback = () => (
   <div className="flex min-h-[50vh] items-center justify-center text-ink-400">Loading...</div>
@@ -135,22 +138,10 @@ function App() {
                     <Route path="blog" element={<AdminPosts type="blog" label="Blog" />} />
                     <Route path="news" element={<AdminPosts type="news" label="News" />} />
                     <Route path="community" element={<AdminCommunity />} />
-                    <Route
-                      path="courses"
-                      element={<AdminStub title="Course Management" description="Manage learning track lessons directly from the panel instead of the seed script. Planned for a later phase." />}
-                    />
-                    <Route
-                      path="analytics"
-                      element={<AdminStub title="Analytics" description="Traffic, engagement, and content performance dashboards. Planned for a later phase." />}
-                    />
-                    <Route
-                      path="seo"
-                      element={<AdminStub title="SEO Settings" description="Manage meta tags, sitemaps, and structured data site-wide from one screen. Planned for a later phase." />}
-                    />
-                    <Route
-                      path="ads"
-                      element={<AdminStub title="Advertisement Management" description="Manage ad placements and sponsors, if the platform introduces them. Planned for a later phase." />}
-                    />
+                    <Route path="courses" element={<AdminCourses />} />
+                    <Route path="analytics" element={<AdminAnalytics />} />
+                    <Route path="seo" element={<AdminSEO />} />
+                    <Route path="ads" element={<AdminAds />} />
                   </Route>
                 </Route>
 

@@ -20,8 +20,23 @@ export interface AdminUser {
   lastLoginAt?: string;
 }
 
+export interface AnalyticsData {
+  signupsByDay: { date: string; signups: number }[];
+  topLessons: { _id: string; title: string; track: string; viewCount: number }[];
+  topMachines: { _id: string; title: string; category: string; viewCount: number }[];
+  topDownloads: { _id: string; title: string; downloadCount: number }[];
+  topThreads: { _id: string; title: string; type: string; viewCount: number; commentCount: number }[];
+  community: { threadCount: number; commentCount: number };
+  totalContentViews: number;
+}
+
 export const fetchAdminStats = async (): Promise<AdminStats> => {
   const { data } = await api.get("/admin/stats");
+  return data;
+};
+
+export const fetchAnalytics = async (): Promise<AnalyticsData> => {
+  const { data } = await api.get("/admin/analytics");
   return data;
 };
 

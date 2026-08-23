@@ -4,6 +4,7 @@ import { Search, ArrowRight, Cpu, Gauge, Wrench, Network } from "lucide-react";
 import { LadderRung } from "@/components/ui/LadderRung";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { HomeDynamicSections } from "@/components/HomeDynamicSections";
+import { AdSlot } from "@/components/AdSlot";
 import { useSEO } from "@/hooks/useSEO";
 import { buildOrganizationSchema } from "@/lib/structured-data";
 
@@ -77,6 +78,10 @@ export const Home = () => {
         </div>
       </div>
     </section>
+
+    <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+      <AdSlot placement="homepage-banner" />
+    </div>
 
     {/* Category grid */}
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

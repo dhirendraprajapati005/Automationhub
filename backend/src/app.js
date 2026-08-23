@@ -20,6 +20,8 @@ import wiringDiagramRoutes from "./routes/wiringDiagramRoutes.js";
 import faultRoutes from "./routes/faultRoutes.js";
 import searchRoutes from "./routes/searchRoutes.js";
 import newsletterRoutes from "./routes/newsletterRoutes.js";
+import settingsRoutes from "./routes/settingsRoutes.js";
+import adRoutes from "./routes/adRoutes.js";
 import { getSitemap } from "./controllers/sitemapController.js";
 import { errorHandler, notFound } from "./middleware/errorHandler.js";
 
@@ -102,6 +104,8 @@ app.use("/api/wiring-diagrams", wiringDiagramRoutes);
 app.use("/api/faults", faultRoutes);
 app.use("/api/search", searchRoutes);
 app.use("/api/newsletter", newsletterRoutes);
+app.use("/api/settings", settingsRoutes);
+app.use("/api/ads", adRoutes);
 
 // --- Error handling (must be last) ---
 app.use(notFound);
