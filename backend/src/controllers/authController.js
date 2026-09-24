@@ -151,7 +151,11 @@ const refresh = asyncHandler(async (req, res) => {
   }
 
   const accessToken = generateAccessToken(user._id, user.role);
-  res.json({ accessToken });
+  // Returning the user object here (already fetched above) saves the
+  // frontend a second /auth/me round-trip on every single page load —
+  // this endpoint fires on every app mount to restore the session, so
+  // that extra request was pure latency, doubled on top of it.
+  res.json({ accessToken, user: user.toSafeObject() });
 });
 
 // @route  POST /api/auth/logout

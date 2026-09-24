@@ -6,7 +6,7 @@ export const generateOTP = () =>
 export const sendOTPEmail = async (toEmail, otp) => {
   await sendEmail({
     to: toEmail,
-    subject: "Your AutomationHub verification code",
+    subject: "Your DP Automation verification code",
     html: `
       <div style="font-family: Inter, Arial, sans-serif; max-width: 480px; margin: auto;">
         <h2 style="color:#12151A;">Verify your email</h2>

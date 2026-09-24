@@ -23,7 +23,7 @@ const subscribe = asyncHandler(async (req, res) => {
 
   await sendEmail({
     to: email,
-    subject: "You're subscribed to AutomationHub",
+    subject: "You're subscribed to DP Automation",
     html: `
       <div style="font-family: Inter, Arial, sans-serif; max-width: 480px; margin: auto;">
         <h2 style="color:#12151A;">You're in</h2>

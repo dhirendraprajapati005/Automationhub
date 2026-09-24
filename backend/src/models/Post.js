@@ -35,7 +35,7 @@ const postSchema = new mongoose.Schema(
     },
     authorName: {
       type: String,
-      default: "AutomationHub Team",
+      default: "DP Automation Team",
     },
     tags: [{ type: String, trim: true }],
     isPublished: {

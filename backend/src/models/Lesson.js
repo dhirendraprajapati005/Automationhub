@@ -51,7 +51,7 @@ const lessonSchema = new mongoose.Schema(
     // Denormalized on the author account for a byline; not a strict foreign key requirement
     author: {
       type: String,
-      default: "AutomationHub Team",
+      default: "DP Automation Team",
     },
     isPublished: {
       type: Boolean,

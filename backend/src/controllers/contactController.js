@@ -29,7 +29,7 @@ const submitContactForm = asyncHandler(async (req, res) => {
   await sendEmail({
     to: contactEmail,
     replyTo: email,
-    subject: `[AutomationHub Contact] ${escape(subject)}`,
+    subject: `[DP Automation Contact] ${escape(subject)}`,
     html: `
       <div style="font-family: Inter, Arial, sans-serif; max-width: 560px; margin: auto;">
         <h2 style="color:#12151A;">New contact form submission</h2>

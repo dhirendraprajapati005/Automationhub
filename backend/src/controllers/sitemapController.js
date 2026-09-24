@@ -40,7 +40,7 @@ const urlEntry = (loc, lastmod, priority, changefreq) => `  <url>
 //         backend (see README) since the frontend and backend are typically
 //         deployed to different origins.
 const getSitemap = asyncHandler(async (req, res) => {
-  const siteUrl = (process.env.SITE_URL || "https://automationhub.dev").replace(/\/$/, "");
+  const siteUrl = (process.env.SITE_URL || "https://dpautomation.com").replace(/\/$/, "");
 
   const [lessons, machines, posts, wiringDiagrams, faults] = await Promise.all([
     Lesson.find({ isPublished: true }).select("track slug updatedAt"),

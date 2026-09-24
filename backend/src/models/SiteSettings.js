@@ -8,7 +8,7 @@ const SETTINGS_ID = "site-settings";
 const siteSettingsSchema = new mongoose.Schema(
   {
     _id: { type: String, default: SETTINGS_ID },
-    siteName: { type: String, default: "AutomationHub" },
+    siteName: { type: String, default: "DP Automation" },
     defaultMetaDescription: {
       type: String,
       default:
