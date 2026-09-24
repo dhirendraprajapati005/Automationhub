@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const SITE_NAME = "DP Automation";
 // Matches SITE_URL in the backend .env — keep these in sync in production.
-const SITE_URL = "https://dpautomation.dev";
+const SITE_URL = "https://dpautomation.com";
 
 interface SEOOptions {
   title: string;

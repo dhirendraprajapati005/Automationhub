@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://automationhub.dev/sitemap.xml
+Sitemap: https://automationhub.com/sitemap.xml
