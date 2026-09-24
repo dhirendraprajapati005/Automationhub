@@ -137,4 +137,81 @@
   .lesson-content a {
     @apply text-signal-500 hover:text-signal-400 underline underline-offset-2;
   }
+
+  /* Blueprint grid — faint engineering-drawing graph paper, for hero/section
+     backgrounds. Reinforces "technical drawing" character beyond just color. */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(to right, var(--color-panel-700) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-panel-700) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -1px -1px;
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+    mask-image: linear-gradient(to bottom, black, transparent 85%);
+    opacity: 0.35;
+  }
+
+  /* Status LED — a small indicator dot with a soft glow, the way a control
+     panel shows run/fault/idle state. Used anywhere a plain "Active" /
+     "Published" text badge would otherwise be the only signal. */
+  .status-led {
+    @apply inline-block h-2 w-2 shrink-0 rounded-full;
+  }
+  .status-led.on {
+    @apply bg-circuit-400;
+    box-shadow: 0 0 6px 1px var(--color-circuit-400);
+  }
+  .status-led.off {
+    @apply bg-panel-600;
+  }
+  .status-led.warn {
+    @apply bg-signal-500;
+    box-shadow: 0 0 6px 1px var(--color-signal-500);
+  }
+
+  /* Digital readout — for counters/stats, styled like a numeric panel meter
+     rather than plain bold sans-serif, so numbers on dashboards and stat
+     cards read as instrumentation rather than generic SaaS metrics. */
+  .digital-readout {
+    @apply font-mono tabular-nums tracking-tight text-signal-500;
+    text-shadow: 0 0 12px color-mix(in srgb, var(--color-signal-500) 40%, transparent);
+  }
+
+  /* Terminal strip divider — a row of small connector marks standing in for
+     a plain <hr>, echoing the wiring-diagram terminal blocks used elsewhere
+     on the site. */
+  .terminal-divider {
+    @apply flex items-center gap-1.5;
+  }
+  .terminal-divider::before,
+  .terminal-divider::after {
+    content: "";
+    @apply h-px flex-1 bg-panel-700;
+  }
+
+  /* Stronger datum-mark corners for surfaces that want more presence than
+     .panel-card's subtle version — section headers, feature call-outs. */
+  .datum-frame {
+    @apply relative;
+  }
+  .datum-frame::before,
+  .datum-frame::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: var(--color-signal-500);
+  }
+  .datum-frame::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+  }
+  .datum-frame::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+  }
 }

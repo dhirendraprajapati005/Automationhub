@@ -5,11 +5,11 @@ import { useSEO } from "@/hooks/useSEO";
 
 const content = `**Last updated:** [insert launch date]
 
-These Terms of Service govern your use of AutomationHub. By creating an account or using the platform, you agree to these terms.
+These Terms of Service govern your use of DP Automation. By creating an account or using the platform, you agree to these terms.
 
 ## The service
 
-AutomationHub is a free industrial automation learning platform providing lessons, calculators, a machine library, downloadable resources, a community forum, and an AI-assisted question-answering tool. Core learning content is free; we may introduce optional paid features in the future, which would be clearly labeled as such.
+DP Automation is a free industrial automation learning platform providing lessons, calculators, a machine library, downloadable resources, a community forum, and an AI-assisted question-answering tool. Core learning content is free; we may introduce optional paid features in the future, which would be clearly labeled as such.
 
 ## Accounts
 
@@ -29,7 +29,7 @@ We may suspend or terminate accounts that violate these terms, at our discretion
 
 ## User-generated content
 
-You retain ownership of content you post (community threads, comments, uploaded images and files). By posting, you grant AutomationHub a non-exclusive, worldwide, royalty-free license to display, distribute, and store that content as part of operating the platform. You're solely responsible for content you post and confirm you have the right to share it.
+You retain ownership of content you post (community threads, comments, uploaded images and files). By posting, you grant DP Automation a non-exclusive, worldwide, royalty-free license to display, distribute, and store that content as part of operating the platform. You're solely responsible for content you post and confirm you have the right to share it.
 
 We reserve the right to remove content that violates these terms or our community guidelines, and to moderate the Community Forum accordingly.
 
@@ -47,7 +47,7 @@ The platform is provided "as is" without warranties of any kind, express or impl
 
 ## Limitation of liability
 
-To the fullest extent permitted by law, AutomationHub and its operators are not liable for any indirect, incidental, or consequential damages arising from your use of the platform, including any damages resulting from applying technical content to real equipment.
+To the fullest extent permitted by law, DP Automation and its operators are not liable for any indirect, incidental, or consequential damages arising from your use of the platform, including any damages resulting from applying technical content to real equipment.
 
 ## Changes to these terms
 
@@ -68,7 +68,7 @@ Questions about these terms can be sent through the Contact page.
 export const Terms = () => {
   useSEO({
     title: "Terms of Service",
-    description: "The terms that govern your use of AutomationHub.",
+    description: "The terms that govern your use of DP Automation.",
     path: "/terms",
   });
 

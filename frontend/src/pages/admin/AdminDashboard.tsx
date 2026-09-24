@@ -32,7 +32,7 @@ export const AdminDashboard = () => {
         {cards.map(({ label, value, icon: Icon }) => (
           <div key={label} className="panel-card">
             <Icon className="h-5 w-5 text-signal-500" />
-            <p className="mt-3 font-mono text-3xl font-bold">{value.toLocaleString()}</p>
+            <p className="mt-3 digital-readout text-3xl font-bold">{value.toLocaleString()}</p>
             <p className="mt-1 text-sm text-ink-400">{label}</p>
           </div>
         ))}
@@ -43,7 +43,7 @@ export const AdminDashboard = () => {
           <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-ink-400">
             Total file downloads served
           </h3>
-          <p className="mt-2 font-mono text-2xl font-bold text-signal-500">
+          <p className="mt-2 digital-readout text-2xl font-bold">
             {stats.totalFileDownloads.toLocaleString()}
           </p>
 

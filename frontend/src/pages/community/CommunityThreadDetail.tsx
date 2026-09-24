@@ -26,7 +26,7 @@ export const CommunityThreadDetail = () => {
 
   useSEO({
     title: thread ? thread.title : "Community Post",
-    description: thread ? thread.body.slice(0, 160) : "A community post on AutomationHub.",
+    description: thread ? thread.body.slice(0, 160) : "A community post on DP Automation.",
     path: `/community/${id}`,
   });
   const load = () => {

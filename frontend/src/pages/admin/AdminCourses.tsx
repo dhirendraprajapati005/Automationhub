@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Plus, Trash2, Pencil, X } from "lucide-react";
+import { StatusLED } from "@/components/ui/StatusLED";
 import {
   fetchAllLessonsAdmin,
   fetchLessonByIdAdmin,
@@ -212,9 +213,8 @@ export const AdminCourses = () => {
           <div key={lesson._id} className="panel-card flex items-center justify-between">
             <div>
               <p className="font-display text-sm font-semibold">{lesson.title}</p>
-              <p className="text-xs text-ink-400">
-                {lesson.track}/{lesson.slug} · {lesson.difficulty} · {lesson.isPublished ? "Published" : "Draft"}
-              </p>
+              <p className="text-xs text-ink-400">{lesson.track}/{lesson.slug} · {lesson.difficulty}</p>
+              <StatusLED status={lesson.isPublished ? "on" : "off"} label={lesson.isPublished ? "Published" : "Draft"} className="mt-1 text-ink-400" />
             </div>
             <div className="flex gap-2">
               <button onClick={() => openEdit(lesson._id)} className="rounded-[var(--radius-panel)] border border-panel-700 p-2 text-ink-400 hover:border-signal-500 hover:text-signal-500" aria-label="Edit">

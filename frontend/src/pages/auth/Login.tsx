@@ -30,7 +30,7 @@ export const Login = () => {
 
   return (
     <div className="mx-auto flex max-w-md flex-col justify-center px-4 py-20">
-      <h1 className="font-display text-2xl font-bold">Log in to AutomationHub</h1>
+      <h1 className="font-display text-2xl font-bold">Log in to DP Automation</h1>
       <p className="mt-1 text-sm text-ink-400">Pick up your courses and calculators where you left off.</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-4" noValidate>

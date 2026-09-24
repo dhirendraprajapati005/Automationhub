@@ -112,7 +112,7 @@ export const HomeDynamicSections = () => {
       {/* Learn on YouTube — real, verified channels */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <h2 className="font-display text-2xl font-bold">Learn on YouTube</h2>
-        <p className="mt-1 text-sm text-ink-400">Channels worth following alongside AutomationHub.</p>
+        <p className="mt-1 text-sm text-ink-400">Channels worth following alongside DP Automation.</p>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {YOUTUBE_CHANNELS.map((c) => (
             <a

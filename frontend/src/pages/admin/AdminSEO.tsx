@@ -86,7 +86,7 @@ export const AdminSEO = () => {
             <input
               value={settings.twitterHandle}
               onChange={(e) => setSettings({ ...settings, twitterHandle: e.target.value })}
-              placeholder="@automationhub"
+              placeholder="@dpautomation"
               className="mt-1 w-full rounded-[var(--radius-panel)] border border-panel-600 bg-panel-950 px-3 py-2 text-sm focus:border-signal-500 focus:outline-none"
             />
           </div>

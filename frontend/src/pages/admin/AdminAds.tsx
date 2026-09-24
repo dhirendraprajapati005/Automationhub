@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Plus, Trash2, Pencil, X, Eye, MousePointerClick } from "lucide-react";
 import { fetchAllAdsAdmin, createAd, updateAd, deleteAd, AD_PLACEMENTS, type Ad } from "@/lib/ad-api";
+import { StatusLED } from "@/components/ui/StatusLED";
 
 const emptyForm: {
   placement: (typeof AD_PLACEMENTS)[number];
@@ -180,9 +181,10 @@ export const AdminAds = () => {
               <div className="min-w-0">
                 <p className="truncate font-display text-sm font-semibold">{ad.title}</p>
                 <p className="text-xs text-ink-400">
-                  {placementLabels[ad.placement]} · {ad.isActive ? "Active" : "Inactive"}
+                  {placementLabels[ad.placement]}
                   {ad.sponsorName && ` · ${ad.sponsorName}`}
                 </p>
+                <StatusLED status={ad.isActive ? "on" : "off"} label={ad.isActive ? "Active" : "Inactive"} className="mt-1 text-ink-400" />
               </div>
             </div>
             <div className="flex shrink-0 items-center gap-4">

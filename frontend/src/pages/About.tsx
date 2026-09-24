@@ -3,15 +3,15 @@ import remarkGfm from "remark-gfm";
 import { Zap } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 
-const content = `## What AutomationHub is
+const content = `## What DP Automation is
 
-AutomationHub is a free learning platform for industrial automation — PLC programming, HMI design, SCADA, VFDs, servo systems, sensors, pneumatics, robotics, and industrial networking. Everything on it — lessons, calculators, the machine library, downloads — is free to use, with no paywall on the learning content.
+DP Automation is a free learning platform for industrial automation — PLC programming, HMI design, SCADA, VFDs, servo systems, sensors, pneumatics, robotics, and industrial networking. Everything on it — lessons, calculators, the machine library, downloads — is free to use, with no paywall on the learning content.
 
 ## Why it exists
 
 Most industrial automation knowledge lives in three places: expensive vendor training courses, scattered forum threads with no structure, or in an experienced engineer's head, passed down informally to whoever happens to work alongside them. There's very little that's free, structured, and written from real hands-on machine experience rather than abstract textbook theory.
 
-AutomationHub exists to close that gap — one place with PLC ladder logic, HMI design principles, and machine-level detail (working principle through troubleshooting and maintenance) written the way an experienced engineer would actually explain it to someone learning the trade.
+DP Automation exists to close that gap — one place with PLC ladder logic, HMI design principles, and machine-level detail (working principle through troubleshooting and maintenance) written the way an experienced engineer would actually explain it to someone learning the trade.
 
 ## Where the content comes from
 
@@ -19,13 +19,13 @@ The Machine Library's Filling Machine, Leak Testing Machine, and Rotary Capping 
 
 ## What's next
 
-AutomationHub is under active development. New lessons, machine library entries, and calculators are added regularly, and the Community Forum and AI Assistant are there to fill the gaps between structured lessons and the specific, messy questions that come up on a real production floor.`;
+DP Automation is under active development. New lessons, machine library entries, and calculators are added regularly, and the Community Forum and AI Assistant are there to fill the gaps between structured lessons and the specific, messy questions that come up on a real production floor.`;
 
 export const About = () => {
   useSEO({
-    title: "About AutomationHub",
+    title: "About DP Automation",
     description:
-      "AutomationHub is a free learning platform for PLC programming, industrial automation, HMI, SCADA, and more — built from real hands-on machine experience.",
+      "DP Automation is a free learning platform for PLC programming, industrial automation, HMI, SCADA, and more — built from real hands-on machine experience.",
     path: "/about",
   });
 

@@ -5,7 +5,7 @@ import { useSEO } from "@/hooks/useSEO";
 
 const content = `**Last updated:** [insert launch date]
 
-This Privacy Policy explains what information AutomationHub collects, how it's used, and the choices available to you. AutomationHub is a free industrial automation learning platform.
+This Privacy Policy explains what information DP Automation collects, how it's used, and the choices available to you. DP Automation is a free industrial automation learning platform.
 
 ## Information we collect
 
@@ -46,7 +46,7 @@ Depending on your location, you may have rights to access, correct, or delete yo
 
 ## Children's privacy
 
-AutomationHub is not directed at children under 13, and we do not knowingly collect personal information from children under 13.
+DP Automation is not directed at children under 13, and we do not knowingly collect personal information from children under 13.
 
 ## Changes to this policy
 
@@ -63,7 +63,7 @@ Questions about this policy can be sent through the Contact page.
 export const Privacy = () => {
   useSEO({
     title: "Privacy Policy",
-    description: "How AutomationHub collects, uses, and protects your data.",
+    description: "How DP Automation collects, uses, and protects your data.",
     path: "/privacy",
   });
 

@@ -25,8 +25,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       try {
         const { data } = await api.post("/auth/refresh");
         setAccessToken(data.accessToken);
-        const me = await api.get("/auth/me");
-        setUser(me.data.user);
+        // The refresh response already includes the user — no need for a
+        // separate /auth/me round-trip here.
+        setUser(data.user);
       } catch {
         setAccessToken(null);
         setUser(null);

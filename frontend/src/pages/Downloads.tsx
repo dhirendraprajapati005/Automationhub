@@ -78,7 +78,7 @@ export const Downloads = () => {
                 <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-ink-400">
                   <span className="font-mono uppercase">{item.fileExtension}</span>
                   <span>{formatBytes(item.fileSizeBytes)}</span>
-                  <span>{item.downloadCount} downloads</span>
+                  <span className="digital-readout">{item.downloadCount} downloads</span>
                   <span className="rounded-[var(--radius-panel)] border border-panel-700 px-2 py-0.5">{item.category}</span>
                 </div>
               </div>

@@ -23,7 +23,7 @@ export const SearchResults = () => {
 
   useSEO({
     title: query ? `Search: ${query}` : "Search",
-    description: "Search lessons, machines, wiring diagrams, fault finder entries, and articles across AutomationHub.",
+    description: "Search lessons, machines, wiring diagrams, fault finder entries, and articles across DP Automation.",
     path: `/search${query ? `?q=${encodeURIComponent(query)}` : ""}`,
   });
 
@@ -48,7 +48,7 @@ export const SearchResults = () => {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
       <p className="font-mono text-xs uppercase tracking-widest text-signal-500">Search</p>
-      <h1 className="mt-3 font-display text-3xl font-bold">Search AutomationHub</h1>
+      <h1 className="mt-3 font-display text-3xl font-bold">Search DP Automation</h1>
 
       <form onSubmit={onSubmit} className="mt-6 flex gap-2">
         <div className="relative flex-1">

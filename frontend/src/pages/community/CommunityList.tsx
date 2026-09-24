@@ -10,7 +10,7 @@ export const Community = () => {
   const { user } = useAuth();
   useSEO({
     title: "Community — Ask Questions, Share Projects",
-    description: "Ask PLC and automation questions, share projects, and earn reputation in the AutomationHub community forum.",
+    description: "Ask PLC and automation questions, share projects, and earn reputation in the DP Automation community forum.",
     path: "/community",
   });
   const [threads, setThreads] = useState<ThreadSummary[]>([]);

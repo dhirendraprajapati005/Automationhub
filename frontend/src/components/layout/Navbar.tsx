@@ -28,7 +28,7 @@ export const Navbar = () => {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
           <Zap className="h-5 w-5 text-signal-500" strokeWidth={2.5} />
-          AutomationHub
+          DP Automation
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">

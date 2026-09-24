@@ -15,8 +15,8 @@ export default defineConfig({
       // the plugin generates and injects it, keeping the service worker and
       // manifest in sync automatically.
       manifest: {
-        name: 'AutomationHub — Free Industrial Automation Learning',
-        short_name: 'AutomationHub',
+        name: 'DP Automation — Free Industrial Automation Learning',
+        short_name: 'DP Automation',
         description:
           'Free learning platform for PLC programming, HMI, SCADA, VFD, servo systems, sensors, pneumatics, robotics, and industrial networking.',
         theme_color: '#12151A',

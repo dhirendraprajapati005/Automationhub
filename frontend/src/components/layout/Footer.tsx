@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Zap } from "lucide-react";
+import { TerminalDivider } from "@/components/ui/TerminalDivider";
 
 const columns = [
   {
@@ -49,7 +50,7 @@ export const Footer = () => (
         <div className="col-span-2">
           <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
             <Zap className="h-5 w-5 text-signal-500" strokeWidth={2.5} />
-            AutomationHub
+            DP Automation
           </Link>
           <p className="mt-3 max-w-xs text-sm text-ink-400">
             The free learning hub for PLC programming, industrial automation, and controls engineering.
@@ -72,8 +73,11 @@ export const Footer = () => (
         ))}
       </div>
 
-      <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-panel-700 pt-6 text-sm text-ink-400 sm:flex-row">
-        <p>&copy; {new Date().getFullYear()} AutomationHub. All rights reserved.</p>
+      <div className="mt-12">
+        <TerminalDivider />
+      </div>
+      <div className="mt-6 flex flex-col items-center justify-between gap-4 text-sm text-ink-400 sm:flex-row">
+        <p>&copy; {new Date().getFullYear()} DP Automation. All rights reserved.</p>
         <p className="font-mono text-xs">Built for engineers, by engineers.</p>
       </div>
     </div>

@@ -37,7 +37,7 @@ export const PostDetailPage = ({ type, basePath }: Props) => {
 
   useSEO({
     title: post ? post.title : sectionLabel,
-    description: post?.excerpt ?? `A free AutomationHub ${sectionLabel.toLowerCase()} post.`,
+    description: post?.excerpt ?? `A free DP Automation ${sectionLabel.toLowerCase()} post.`,
     path: `${basePath}/${slug}`,
     type: "article",
     structuredData: post

@@ -36,7 +36,8 @@ export const Home = () => {
   <div>
     {/* Hero */}
     <section className="relative overflow-hidden border-b border-panel-700 bg-panel-900">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
+      <div className="blueprint-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-signal-500">Rung 001 — Power On</p>
           <h1 className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">

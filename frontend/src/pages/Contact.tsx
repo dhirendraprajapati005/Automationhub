@@ -6,7 +6,7 @@ import { useSEO } from "@/hooks/useSEO";
 export const Contact = () => {
   useSEO({
     title: "Contact",
-    description: "Get in touch with the AutomationHub team.",
+    description: "Get in touch with the DP Automation team.",
     path: "/contact",
   });
   const [name, setName] = useState("");

@@ -26,17 +26,17 @@ export const AdminAnalytics = () => {
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div className="panel-card">
           <Eye className="h-5 w-5 text-signal-500" />
-          <p className="mt-2 font-mono text-2xl font-bold">{data.totalContentViews.toLocaleString()}</p>
+          <p className="mt-2 digital-readout text-2xl font-bold">{data.totalContentViews.toLocaleString()}</p>
           <p className="text-xs text-ink-400">Total lesson + machine views</p>
         </div>
         <div className="panel-card">
           <MessageSquare className="h-5 w-5 text-circuit-400" />
-          <p className="mt-2 font-mono text-2xl font-bold">{data.community.threadCount.toLocaleString()}</p>
+          <p className="mt-2 digital-readout text-2xl font-bold">{data.community.threadCount.toLocaleString()}</p>
           <p className="text-xs text-ink-400">{data.community.commentCount} comments across all threads</p>
         </div>
         <div className="panel-card">
           <TrendingUp className="h-5 w-5 text-signal-500" />
-          <p className="mt-2 font-mono text-2xl font-bold">
+          <p className="mt-2 digital-readout text-2xl font-bold">
             {data.signupsByDay.reduce((sum, d) => sum + d.signups, 0)}
           </p>
           <p className="text-xs text-ink-400">New signups, last 30 days</p>
