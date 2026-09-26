@@ -13,9 +13,9 @@ import type { MachineSummary } from "@/types/machine";
 // rather than a specific video, since specific video IDs can't be verified
 // to still exist without checking each one individually.
 const YOUTUBE_CHANNELS = [
-  { name: "RealPars", url: "https://www.youtube.com/@dpautomationhub", description: "PLC, HMI, and process automation fundamentals" },
-  { name: "TW Controls", url: "https://www.youtube.com/@dpautomationhub", description: "Practical PLC programming and panel-building" },
-  { name: "SolisPLC", url: "https://www.youtube.com/@dpautomationhub", description: "PLC programming tutorials across multiple platforms" },
+  { name: "DP Automation", url: "https://www.youtube.com/@dpautomationhub", description: "PLC, HMI, and process automation fundamentals" },
+  { name: "DP Automation", url: "https://www.youtube.com/@dpautomationhub", description: "Practical PLC programming and panel-building" },
+  { name: "DP Automation", url: "https://www.youtube.com/@dpautomationhub", description: "PLC programming tutorials across multiple platforms" },
 ];
 
 export const HomeDynamicSections = () => {
